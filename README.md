@@ -20,7 +20,13 @@ Grab **`JJK-Modpack-1.20.1.zip`** from the **[Releases page](../../releases/late
 |---|----------|
 | 1 | **SKlauncher** installed |
 | 2 | The **modpack zip** from the Releases page above |
-| 3 | The **server address** — ask the host, keep it handy |
+| 3 | The **server address** (below) — you're all set, it's already in this guide |
+
+### 🌐 Server address
+```
+whacking-prevent.gl.joinmc.link
+```
+Just paste that in — no port needed.
 
 ---
 
@@ -58,7 +64,7 @@ Unzip `JJK-Modpack-1.20.1.zip` and copy **all of its contents** into your game d
 - **Shaders (optional, needs a decent GPU):** Options → Video Settings → Shader Packs → enable **Complementary Reimagined**
 
 **5. Launch & connect**
-Start SKlauncher → `JJK 1.20.1` → **Play**. First load is slow. Then **Multiplayer → Direct Connection** → enter the host's address → **Join Server**.
+Start SKlauncher → `JJK 1.20.1` → **Play**. First load is slow. Then **Multiplayer → Direct Connection** → enter `whacking-prevent.gl.joinmc.link` → **Join Server**.
 
 ---
 
