@@ -1,0 +1,44 @@
+# Mod List (40)
+
+Minecraft 1.20.1 · Forge 47.4.0. Everyone must run this exact set.
+
+- `BetterThirdPerson-Forge-1.20-1.9.0.jar`
+- `CustomSkinLoader_Universal-15.0.1.jar`
+- `Dungeon Crawl-1.20.1-2.3.15.jar`
+- `ImmediatelyFast-Forge-1.5.5+1.20.4.jar`
+- `JJSK-4.3-forge-1.20.1.jar`
+- `JujutsuCraft-ver50.1-forge-1.20.1.jar`
+- `ParCool-1.20.1-3.4.3.3.jar`
+- `RegionsUnexploredForge-0.5.6+1.20.1.jar`
+- `TerraBlender-forge-1.20.1-3.0.1.10.jar`
+- `Towns-and-Towers-1.12-Fabric+Forge.jar`
+- `YungsApi-1.20-Forge-4.0.6.jar`
+- `YungsBetterDungeons-1.20-Forge-4.0.4.jar`
+- `YungsBetterMineshafts-1.20-Forge-4.0.4.jar`
+- `YungsBetterStrongholds-1.20-Forge-4.0.3.jar`
+- `appleskin-forge-mc1.20.1-2.5.1.jar`
+- `balm-forge-1.20.1-7.3.39-all.jar`
+- `bettercombat-forge-1.9.0+1.20.1.jar`
+- `cloth-config-11.1.136-forge.jar`
+- `cristellib-1.1.6-forge.jar`
+- `ctov-3.4.14-forge-1.20.1.jar`
+- `cursed-enhancement-ver2-forge-1.20.1.jar`
+- `dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar`
+- `eatinganimation-1.20.1-5.1.0.jar`
+- `embeddium-0.3.31+mc1.20.1.jar`
+- `entityculling-forge-1.10.5-mc1.20.1.jar`
+- `ferritecore-6.0.1-forge.jar`
+- `geckolib-forge-1.20.1-4.8.4.jar`
+- `gml-4.0.10-all.jar`
+- `jei-1.20.1-forge-15.20.0.133.jar`
+- `lithostitched-forge-1.20.1-1.4.11.jar`
+- `lootr-forge-1.20-0.7.35.94.jar`
+- `modern_jujutsu-1.0.jar`
+- `modernfix-forge-5.27.58+mc1.20.1.jar`
+- `notenoughanimations-forge-1.12.4-mc1.20.1.jar`
+- `player-animation-lib-forge-1.0.2-rc1+1.20.jar`
+- `sophisticatedbackpacks-1.20.1-3.24.59.1960.jar`
+- `sophisticatedcore-1.20.1-1.3.65.2126.jar`
+- `waystones-forge-1.20.1-14.1.20.jar`
+- `xaerominimap-forge-1.20.1-26.2.0.jar`
+- `xaeroworldmap-forge-1.20.1-1.42.0.jar`

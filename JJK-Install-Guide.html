@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jujutsu Kaisen SMP — Install Guide</title>
+<style>
+  :root {
+    --bg: #0b0b11;
+    --surface: #14141d;
+    --surface-2: #1b1b27;
+    --border: #2a2a38;
+    --text: #e4e4ee;
+    --text-dim: #9797ab;
+    --accent: #6d8bff;
+    --accent-2: #a78bfa;
+    --glow: rgba(109,139,255,0.30);
+    --danger: #ff5c6c;
+    --danger-bg: rgba(255,92,108,0.10);
+    --ok: #3ed69a;
+    --mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    --sans: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --maxw: 760px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #eef0f7;
+      --surface: #ffffff;
+      --surface-2: #e7eaf4;
+      --border: #d6d9e6;
+      --text: #191924;
+      --text-dim: #5c5c70;
+      --accent: #4457d6;
+      --accent-2: #7c5cf0;
+      --glow: rgba(68,87,214,0.16);
+      --danger: #cf3546;
+      --danger-bg: rgba(207,53,70,0.08);
+      --ok: #12a074;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0b11; --surface: #14141d; --surface-2: #1b1b27; --border: #2a2a38;
+    --text: #e4e4ee; --text-dim: #9797ab; --accent: #6d8bff; --accent-2: #a78bfa;
+    --glow: rgba(109,139,255,0.30); --danger: #ff5c6c; --danger-bg: rgba(255,92,108,0.10); --ok: #3ed69a;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef0f7; --surface: #ffffff; --surface-2: #e7eaf4; --border: #d6d9e6;
+    --text: #191924; --text-dim: #5c5c70; --accent: #4457d6; --accent-2: #7c5cf0;
+    --glow: rgba(68,87,214,0.16); --danger: #cf3546; --danger-bg: rgba(207,53,70,0.08); --ok: #12a074;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px 96px; }
+
+  /* ---- hero ---- */
+  .hero {
+    position: relative;
+    padding: 80px 22px 64px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40%; left: 50%;
+    width: 680px; height: 680px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, var(--glow) 0%, transparent 62%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: var(--maxw); margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2.3rem, 7vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  h1 .sub2 {
+    display: block;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 600;
+    color: var(--accent-2);
+    letter-spacing: 0.01em;
+    margin-top: 6px;
+  }
+  .lede { color: var(--text-dim); font-size: 1.05rem; max-width: 46ch; margin: 18px auto 26px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .pill {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .pill b { color: var(--accent); font-weight: 600; }
+
+  /* ---- section headings ---- */
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    margin: 54px 0 6px;
+  }
+  .section-note { color: var(--text-dim); margin: 0 0 22px; font-size: 0.96rem; }
+
+  /* ---- requirements card ---- */
+  .req {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 6px 20px;
+    margin-top: 8px;
+  }
+  .req ul { list-style: none; margin: 0; padding: 0; }
+  .req li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .req li:last-child { border-bottom: none; }
+  .req .k { color: var(--accent); font-family: var(--mono); font-size: 0.9rem; flex: 0 0 auto; }
+  .req .v { color: var(--text); }
+  .req .v small { display: block; color: var(--text-dim); font-size: 0.85rem; }
+
+  /* ---- steps rail ---- */
+  .steps { position: relative; margin-top: 10px; padding-left: 4px; }
+  .steps::before {
+    content: "";
+    position: absolute;
+    left: 21px; top: 12px; bottom: 12px;
+    width: 2px;
+    background: linear-gradient(var(--accent), var(--accent-2));
+    opacity: 0.35;
+  }
+  .step { position: relative; padding: 0 0 30px 60px; }
+  .step-num {
+    position: absolute;
+    left: 0; top: 0;
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 0 0 5px var(--bg), 0 0 18px -6px var(--glow);
+  }
+  .step h3 { margin: 6px 0 8px; font-size: 1.12rem; font-weight: 700; letter-spacing: -0.005em; }
+  .step p { margin: 0 0 10px; color: var(--text); }
+  .step p.dim { color: var(--text-dim); font-size: 0.94rem; }
+  code {
+    font-family: var(--mono);
+    font-size: 0.86em;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 7px;
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  .field {
+    display: grid; grid-template-columns: auto 1fr; gap: 4px 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; margin: 12px 0;
+  }
+  .field dt { font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; align-self: center; }
+  .field dd { margin: 0; font-family: var(--mono); font-size: 0.92rem; color: var(--text); font-weight: 600; }
+
+  /* ---- callouts ---- */
+  .callout {
+    display: flex; gap: 12px;
+    border-radius: 12px; padding: 14px 16px; margin: 14px 0;
+    font-size: 0.95rem;
+  }
+  .callout .ic { flex: 0 0 auto; font-weight: 800; font-family: var(--mono); }
+  .callout.warn { background: var(--danger-bg); border: 1px solid var(--danger); }
+  .callout.warn .ic { color: var(--danger); }
+  .callout.info { background: var(--surface); border: 1px solid var(--border); }
+  .callout.info .ic { color: var(--accent); }
+  .callout strong { color: var(--text); }
+
+  /* ---- troubleshooting ---- */
+  .trouble { display: grid; gap: 10px; margin-top: 10px; }
+  .tr {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px;
+  }
+  .tr .q { font-weight: 700; margin: 0 0 6px; display: flex; gap: 9px; align-items: baseline; }
+  .tr .q .tag { font-family: var(--mono); font-size: 0.7rem; color: var(--danger); border: 1px solid var(--danger); border-radius: 5px; padding: 1px 6px; text-transform: uppercase; letter-spacing: 0.05em; flex: 0 0 auto; }
+  .tr .a { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+  .tr .a code { font-size: 0.82em; }
+
+  /* ---- footer ---- */
+  footer {
+    margin-top: 64px; padding-top: 26px;
+    border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-dim); font-size: 0.86rem;
+  }
+  footer .dom { font-family: var(--mono); color: var(--accent-2); letter-spacing: 0.04em; }
+
+  @media (max-width: 480px) {
+    .step { padding-left: 52px; }
+    .step-num { width: 40px; height: 40px; }
+    .steps::before { left: 19px; }
+    .field { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-inner > * { animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-inner > *:nth-child(2) { animation-delay: .05s; }
+    .hero-inner > *:nth-child(3) { animation-delay: .1s; }
+    .hero-inner > *:nth-child(4) { animation-delay: .15s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Setup Guide · SKlauncher</p>
+    <h1>Jujutsu Kaisen SMP<span class="sub2">Modded Server — Join Guide</span></h1>
+    <p class="lede">Everything you need to get into the server. Follow the steps in order — it takes about 10 minutes the first time.</p>
+    <div class="pills">
+      <span class="pill">Minecraft <b>1.20.1</b></span>
+      <span class="pill">Forge <b>47.4.0</b></span>
+      <span class="pill"><b>40</b> mods</span>
+      <span class="pill">Java <b>17</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2>Before you start</h2>
+  <p class="section-note">Get these three things ready first.</p>
+  <div class="req">
+    <ul>
+      <li><span class="k">01</span><span class="v">SKlauncher installed<small>The launcher you already use to play.</small></span></li>
+      <li><span class="k">02</span><span class="v">The modpack zip<small>Named <code>JJK-Modpack-1.20.1.zip</code> — the host sends this to you. Don't unzip it yet.</small></span></li>
+      <li><span class="k">03</span><span class="v">The server address<small>The host will give you an address to connect to. Keep it handy for the last step.</small></span></li>
+    </ul>
+  </div>
+
+  <h2>Install it</h2>
+  <p class="section-note">Five steps. Do them in order.</p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Create a Forge 1.20.1 install</h3>
+      <p>Open SKlauncher → <strong>Installations Manager</strong> (left menu) → <strong>New Installation</strong>. Set it up exactly like this:</p>
+      <dl class="field">
+        <dt>Name</dt><dd>JJK 1.20.1</dd>
+        <dt>Version type</dt><dd>Forge</dd>
+        <dt>Minecraft</dt><dd>1.20.1</dd>
+        <dt>Forge loader</dt><dd>47.4.0</dd>
+      </dl>
+      <p class="dim">Under <strong>Game Directory</strong>, point it at a <strong>new empty folder</strong> — for example <code>C:\JJK</code>. This keeps the 40 mods separate from your normal Minecraft so nothing breaks. Then click <strong>Save</strong>.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Launch once to finish Forge</h3>
+      <p>Back on the main screen, select your <strong>JJK 1.20.1</strong> install and click <strong>Play</strong>. Let it reach the title screen — this downloads Minecraft 1.20.1 and installs Forge. Then <strong>close the game</strong>.</p>
+      <div class="callout info"><span class="ic">i</span><span>This first launch has <strong>no mods yet</strong> — that's expected. You're just letting Forge set itself up.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Drop in the mods</h3>
+      <p>Unzip <code>JJK-Modpack-1.20.1.zip</code>. Inside is a <code>mods</code> folder with 40 <code>.jar</code> files. Move that whole <code>mods</code> folder into your game directory from Step 1.</p>
+      <p class="dim">You should end up with the jars sitting at <code>C:\JJK\mods\</code> (or whatever folder you chose). If a <code>mods</code> folder is already there, merge them so all 40 jars are inside.</p>
+      <div class="callout warn"><span class="ic">!</span><span><strong>Use all 40 — exactly.</strong> Don't add or remove any mods. Everyone on the server must run the identical set, or you'll get kicked with a mod-mismatch error.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Add the music pack <span style="color:var(--text-dim);font-weight:600;font-size:0.85rem">(optional)</span></h3>
+      <p>If the host sends a <strong>JJK-Music</strong> resource pack, drop it into the <code>resourcepacks</code> folder in your game directory, then enable it in-game under <strong>Options → Resource Packs</strong>. This swaps the background music and music discs for JJK tracks.</p>
+      <p class="dim">Totally optional — skip it and the game plays normally.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <h3>Launch and connect</h3>
+      <p>Start SKlauncher, pick the <strong>JJK 1.20.1</strong> install, and hit <strong>Play</strong>. First load is slow (40 mods) — give it a minute. At the main menu go to <strong>Multiplayer → Direct Connection</strong> and enter the address the host gave you:</p>
+      <dl class="field">
+        <dt>Server address</dt><dd>ask your host →</dd>
+      </dl>
+      <p class="dim">If typing <code>localhost</code> or a name fails, use the exact address the host provides. Then hit <strong>Join Server</strong>. You're in.</p>
+    </div>
+
+  </div>
+
+  <h2>If something goes wrong</h2>
+  <p class="section-note">The usual snags and their fixes.</p>
+  <div class="trouble">
+    <div class="tr">
+      <p class="q"><span class="tag">Mods</span>“needs language provider” or “failed to load”</p>
+      <p class="a">Your <code>mods</code> folder is missing a file. Delete everything in it and re-copy all 40 jars from the zip. All of them have to be there.</p>
+    </div>
+    <div class="tr">
+      <p class="q"><span class="tag">Kicked</span>“mod mismatch” when joining</p>
+      <p class="a">You have a different mod set than the server. Make sure it's the exact 40 from the zip — nothing added, nothing missing, same versions.</p>
+    </div>
+    <div class="tr">
+      <p class="q"><span class="tag">Java</span>“requires Java 17” / won't launch</p>
+      <p class="a">SKlauncher usually handles Java automatically. If not, install <strong>Temurin (Adoptium) Java 17</strong> and pick it in the install's settings.</p>
+    </div>
+    <div class="tr">
+      <p class="q"><span class="tag">Connect</span>Can't reach the server</p>
+      <p class="a">Use the exact address the host gave you (not <code>localhost</code>). Double-check the host's server is actually on. If it still fails, the host may need to restart their tunnel.</p>
+    </div>
+    <div class="tr">
+      <p class="q"><span class="tag">Lag</span>Low FPS or stutter</p>
+      <p class="a">The pack already includes performance mods. In the install's settings, give it <strong>4–6 GB RAM</strong> if you have it, and it'll smooth out after the first few minutes.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Minecraft 1.20.1 · Forge 47.4.0 · 40 mods · Jujutsu Craft + JJSK + Cursed Enhancement</p>
+    <p class="dom">domain expansion — see you in there</p>
+  </footer>
+
+</div>
+</head></html>
