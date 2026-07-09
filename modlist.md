@@ -1,8 +1,7 @@
-# Mod List (40)
+# Mod List (41)
 
 Minecraft 1.20.1 · Forge 47.4.0. Everyone must run this exact set.
 
-- `BetterThirdPerson-Forge-1.20-1.9.0.jar`
 - `CustomSkinLoader_Universal-15.0.1.jar`
 - `Dungeon Crawl-1.20.1-2.3.15.jar`
 - `ImmediatelyFast-Forge-1.5.5+1.20.4.jar`
@@ -10,6 +9,7 @@ Minecraft 1.20.1 · Forge 47.4.0. Everyone must run this exact set.
 - `JujutsuCraft-ver50.1-forge-1.20.1.jar`
 - `ParCool-1.20.1-3.4.3.3.jar`
 - `RegionsUnexploredForge-0.5.6+1.20.1.jar`
+- `ShoulderSurfing-Forge-1.20.1-5.0.5.jar`
 - `TerraBlender-forge-1.20.1-3.0.1.10.jar`
 - `Towns-and-Towers-1.12-Fabric+Forge.jar`
 - `YungsApi-1.20-Forge-4.0.6.jar`
@@ -36,6 +36,7 @@ Minecraft 1.20.1 · Forge 47.4.0. Everyone must run this exact set.
 - `modern_jujutsu-1.0.jar`
 - `modernfix-forge-5.27.58+mc1.20.1.jar`
 - `notenoughanimations-forge-1.12.4-mc1.20.1.jar`
+- `oculus-mc1.20.1-1.8.0.jar`
 - `player-animation-lib-forge-1.0.2-rc1+1.20.jar`
 - `sophisticatedbackpacks-1.20.1-3.24.59.1960.jar`
 - `sophisticatedcore-1.20.1-1.3.65.2126.jar`

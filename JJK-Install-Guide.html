@@ -246,7 +246,7 @@
     <div class="pills">
       <span class="pill">Minecraft <b>1.20.1</b></span>
       <span class="pill">Forge <b>47.4.0</b></span>
-      <span class="pill"><b>40</b> mods</span>
+      <span class="pill"><b>41</b> mods</span>
       <span class="pill">Java <b>17</b></span>
     </div>
   </div>
@@ -291,17 +291,23 @@
 
     <div class="step">
       <div class="step-num">3</div>
-      <h3>Drop in the mods</h3>
-      <p>Unzip <code>JJK-Modpack-1.20.1.zip</code>. Inside is a <code>mods</code> folder with 40 <code>.jar</code> files. Move that whole <code>mods</code> folder into your game directory from Step 1.</p>
-      <p class="dim">You should end up with the jars sitting at <code>C:\JJK\mods\</code> (or whatever folder you chose). If a <code>mods</code> folder is already there, merge them so all 40 jars are inside.</p>
-      <div class="callout warn"><span class="ic">!</span><span><strong>Use all 40 — exactly.</strong> Don't add or remove any mods. Everyone on the server must run the identical set, or you'll get kicked with a mod-mismatch error.</span></div>
+      <h3>Copy everything in</h3>
+      <p>Unzip <code>JJK-Modpack-1.20.1.zip</code> and copy <strong>all of its contents</strong> into your game directory from Step 1 (e.g. <code>C:\JJK</code>), overwriting if asked. You get four things:</p>
+      <dl class="field">
+        <dt>mods/</dt><dd>the 41 mods</dd>
+        <dt>options.txt</dt><dd>pre-set keybinds (no conflicts)</dd>
+        <dt>resourcepacks/</dt><dd>custom JujutsuCraft textures</dd>
+        <dt>shaderpacks/</dt><dd>Complementary shaders (optional)</dd>
+      </dl>
+      <div class="callout warn"><span class="ic">!</span><span><strong>Use all 41 mods — exactly.</strong> Don't add or remove any. Everyone on the server must run the identical set, or you'll get kicked with a mod-mismatch error.</span></div>
     </div>
 
     <div class="step">
       <div class="step-num">4</div>
-      <h3>Add the music pack <span style="color:var(--text-dim);font-weight:600;font-size:0.85rem">(optional)</span></h3>
-      <p>If the host sends a <strong>JJK-Music</strong> resource pack, drop it into the <code>resourcepacks</code> folder in your game directory, then enable it in-game under <strong>Options → Resource Packs</strong>. This swaps the background music and music discs for JJK tracks.</p>
-      <p class="dim">Totally optional — skip it and the game plays normally.</p>
+      <h3>Turn on the extras (in-game)</h3>
+      <p><strong>Textures:</strong> Options → <strong>Resource Packs</strong> → enable <strong>Customized JujutsuCraft</strong> (sharper JJK models &amp; textures).</p>
+      <p><strong>Shaders</strong> <span style="color:var(--text-dim);font-weight:600;font-size:0.85rem">(optional, needs a decent GPU):</span> Options → Video Settings → <strong>Shader Packs</strong> → enable <strong>Complementary Reimagined</strong>. Turn it off here if your FPS drops.</p>
+      <p class="dim">Keybinds are already set up for you — no conflicts. Tweak any of them in <strong>Options → Controls</strong> if you like.</p>
     </div>
 
     <div class="step">
@@ -342,7 +348,7 @@
   </div>
 
   <footer>
-    <p>Minecraft 1.20.1 · Forge 47.4.0 · 40 mods · Jujutsu Craft + JJSK + Cursed Enhancement</p>
+    <p>Minecraft 1.20.1 · Forge 47.4.0 · 41 mods · Jujutsu Craft + JJSK + Cursed Enhancement</p>
     <p class="dom">domain expansion — see you in there</p>
   </footer>
 
